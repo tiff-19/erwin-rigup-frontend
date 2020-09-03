@@ -12,12 +12,12 @@ pipeline {
             }
         }
         stage('Build rigup project') {
-            steps{
+            steps {
                 sh 'npm run build'
             }
         }
         stage('Build docker image') {
-            steps{
+            steps {
                 script {
                 	app = docker.build("tiff19/frontend-rigup")
                 }
