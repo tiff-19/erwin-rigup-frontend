@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        // CI = 'true'
+        CI = 'false'
         DOCKER_TAG = getDockerTag()
     }
     stages {
@@ -62,16 +62,16 @@ pipeline {
                 }
             }
         }
-        stage('Deployment to Production') {
-            steps {
-                milestone(1)
-                kubernetesDeploy (
-                    kubeconfigId: 'kubeconfig',
-                    configs: 'frontend.yml',
-                    enableConfigSubstitution: true
-                )
-            }
-        }
+//        stage('Deployment to Production') {
+  //          steps {
+  //              milestone(1)
+  //              kubernetesDeploy (
+  //                  kubeconfigId: 'kubeconfig',
+  //                  configs: 'frontend.yml',
+  //                  enableConfigSubstitution: true
+  //              )
+  //          }
+  //      }
     }
 }
 
