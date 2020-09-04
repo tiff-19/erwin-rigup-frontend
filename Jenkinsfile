@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        CI = 'false'
+//        CI = 'false'
         DOCKER_TAG = getDockerTag()
     }
     stages {
